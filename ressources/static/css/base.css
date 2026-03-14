@@ -67,6 +67,35 @@
     --radius-xl: 24px;
 }
 
+/* ===================== DARK THEME ===================== */
+[data-theme="dark"] {
+    --color-white: #1A1A2E;
+    --color-snow: #16213E;
+    --color-charcoal: #E8E8E8;
+    --color-charcoal-light: #B0B0B0;
+    --color-vermillion: #D95038;
+    --color-vermillion-dark: #C4462B;
+    --color-sakura: #C47A97;
+    --color-sakura-light: #2A1A2E;
+    --color-gold: #D4B054;
+    --color-gold-light: #3D3520;
+    --color-overlay: rgba(10, 10, 30, 0.8);
+    --color-overlay-light: rgba(10, 10, 30, 0.5);
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.45);
+    --shadow-card: 0 2px 16px rgba(217, 80, 56, 0.12);
+}
+
+/* Smooth theme transition */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::after,
+html.theme-transition *::before {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
 /* ===================== RESET ===================== */
 *,
 *::before,
@@ -338,9 +367,13 @@ p {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    transition: all var(--transition-base);
     display: flex;
     align-items: center;
+}
+
+[data-theme="dark"] .site-header {
+    background: rgba(26, 26, 46, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .site-header.compact {
@@ -418,6 +451,57 @@ p {
     height: 32px;
 }
 
+/* Theme toggle button */
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-charcoal-light);
+    cursor: pointer;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    border-color: var(--color-vermillion);
+    background: rgba(196, 70, 43, 0.06);
+}
+
+.theme-toggle:active {
+    transform: scale(0.9);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--color-charcoal);
+    transition: fill 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+    fill: var(--color-vermillion);
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
 /* Header nav links (desktop) */
 .header-nav {
     display: none;
@@ -462,6 +546,15 @@ p {
     backdrop-filter: blur(24px) saturate(1.4);
     -webkit-backdrop-filter: blur(24px) saturate(1.4);
     border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .overlay-menu {
+    background: rgba(26, 26, 46, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.overlay-menu {
     border-radius: var(--radius-xl);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
     z-index: 1050;
@@ -569,6 +662,22 @@ p {
     margin: var(--space-xs) 0;
 }
 
+/* Map preview in dropdown */
+.overlay-map-preview {
+    margin-top: var(--space-xs);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.overlay-map-preview iframe {
+    width: 100%;
+    height: 160px;
+    border: none;
+    display: block;
+    border-radius: var(--radius-md);
+}
+
 .overlay-contact {
     margin-top: var(--space-xs);
     padding-top: var(--space-xs);
@@ -583,9 +692,29 @@ p {
 
 /* ===================== FOOTER ===================== */
 .site-footer {
-    background: var(--color-charcoal);
+    background: #2C2C2C;
     color: rgba(255, 255, 255, 0.7);
     padding: var(--space-2xl) 0 var(--space-lg);
+}
+
+[data-theme="dark"] .site-footer {
+    background: #0F0F23;
+}
+
+[data-theme="dark"] .footer-brand .site-logo-text,
+[data-theme="dark"] .footer-heading {
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] .footer-brand p,
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .footer-contact-item,
+[data-theme="dark"] .footer-bottom p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+    color: var(--color-sakura);
 }
 
 .footer-grid {

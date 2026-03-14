@@ -40,6 +40,13 @@
     flex-shrink: 0;
 }
 
+.university-badge-icon {
+    height: 48px;
+    width: auto;
+    flex-shrink: 0;
+    border-radius: var(--radius-sm);
+}
+
 .university-badge p {
     font-family: var(--font-display);
     font-size: var(--font-size-base);
@@ -123,6 +130,42 @@
     font-size: var(--font-size-sm);
     color: var(--color-charcoal-light);
     line-height: 1.7;
+}
+
+/* ===================== TEAM SOCIALS ===================== */
+.team-card-socials {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+}
+
+.team-card-socials a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-charcoal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.team-card-socials a:hover {
+    background: var(--color-vermillion);
+    border-color: var(--color-vermillion);
+    transform: translateY(-2px);
+}
+
+.team-card-socials a svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--color-charcoal-light);
+    transition: fill var(--transition-fast);
+}
+
+.team-card-socials a:hover svg {
+    fill: var(--color-white);
 }
 
 /* ===================== PROJECT SECTION ===================== */

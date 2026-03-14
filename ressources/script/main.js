@@ -1,10 +1,20 @@
 /* ============================================
    NIKKOSHI PEARLS — Main JavaScript
    Handles: burger menu, hero slider, scroll
-   animations, header shrink, temple page content
+   animations, header shrink, temple page content,
+   dark mode toggle
    ============================================ */
 
+/* ===================== DARK MODE (runs immediately) ===================== */
+(function () {
+  const root = document.documentElement;
+  const stored = localStorage.getItem('theme');
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  root.setAttribute('data-theme', stored || (systemDark ? 'dark' : 'light'));
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+  initDarkMode();
   initBurgerMenu();
   initHeroSlider();
   initScrollReveal();
@@ -14,6 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initTempleContent();
   initItineraryTabs();
 });
+
+/* ===================== DARK MODE TOGGLE ===================== */
+function initDarkMode() {
+  const togglers = document.querySelectorAll('[data-theme-toggler]');
+  togglers.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const root = document.documentElement;
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.classList.add('theme-transition');
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      setTimeout(() => root.classList.remove('theme-transition'), 400);
+    });
+  });
+}
 
 /* ===================== BURGER MENU ===================== */
 function initBurgerMenu() {
