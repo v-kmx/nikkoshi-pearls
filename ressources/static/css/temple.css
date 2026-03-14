@@ -1,0 +1,138 @@
+/* ============================================
+   NIKKOSHI PEARLS — Temple Detail Page Styles
+   ============================================ */
+
+/* ===================== TEMPLE ARTICLE ===================== */
+.temple-article {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.temple-article h2 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+}
+
+.temple-article p {
+    font-size: var(--font-size-md);
+    line-height: 1.9;
+    margin-bottom: var(--space-md);
+}
+
+.temple-article-img {
+    margin: var(--space-xl) 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.temple-article-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* ===================== TIMELINE ===================== */
+.timeline {
+    position: relative;
+    padding: var(--space-xl) 0;
+    margin: var(--space-xl) 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-sakura-light), var(--color-vermillion), var(--color-sakura-light));
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: var(--space-xl);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-vermillion);
+    border: 3px solid var(--color-sakura-light);
+}
+
+.timeline-year {
+    font-family: var(--font-display);
+    font-size: var(--font-size-lg);
+    color: var(--color-vermillion);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.timeline-text {
+    font-size: var(--font-size-base);
+    color: var(--color-charcoal-light);
+    line-height: 1.7;
+}
+
+/* ===================== BACK LINK ===================== */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-family: var(--font-display);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-vermillion);
+    margin-bottom: var(--space-lg);
+    transition: gap var(--transition-fast);
+}
+
+.back-link:hover {
+    gap: var(--space-sm);
+    color: var(--color-vermillion-dark);
+}
+
+.back-link svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+}
+
+/* ===================== RESPONSIVE (Temple) ===================== */
+@media (min-width: 768px) {
+    .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        width: 50%;
+        padding-left: 0;
+        padding-right: var(--space-xl);
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 50%;
+        padding-left: var(--space-xl);
+        padding-right: 0;
+    }
+
+    .timeline-item .timeline-dot {
+        left: auto;
+        right: -9px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -9px;
+        right: auto;
+    }
+}

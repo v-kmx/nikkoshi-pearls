@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- Nikkoshi Pearls | Tickets -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan your visit to Nikko's sacred temples and shrines — ticket prices, categories, and seasonal promotions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="ressources/static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="ressources/static/css/tickets.css">
+    <title>Tickets — Nikkoshi Pearls</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner">
+            <button class="burger-btn" id="burger-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="index.html" class="site-logo">
+                <span class="site-logo-text">Nikkoshi Pearls</span>
+            </a>
+            <nav class="header-nav">
+                <a href="index.html">Home</a>
+                <a href="articles.html">Articles</a>
+                <a href="tickets.html" class="active">Tickets</a>
+                <a href="map.html">Map</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- DROPDOWN MENU -->
+    <div class="overlay-scrim" id="overlay-scrim"></div>
+    <div class="overlay-menu" id="overlay-menu">
+        <nav class="overlay-nav">
+            <a href="index.html">Home</a>
+            <a href="articles.html">Articles</a>
+            <a href="tickets.html">Tickets</a>
+            <a href="map.html">Map</a>
+            <a href="about.html">About</a>
+            <div class="overlay-divider"></div>
+            <a href="temple.html?id=toshogu">Nikko Tosho-gu</a>
+            <a href="temple.html?id=rinnoji">Rinno-ji Temple</a>
+            <a href="temple.html?id=futarasan">Futarasan Shrine</a>
+        </nav>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <img src="ressources/static/img/placeholder_img.jpg" alt="Nikko entrance">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>Plan Your Visit</h1>
+            <p>Choose the perfect ticket to explore Nikko's sacred heritage at your own pace.</p>
+        </div>
+    </section>
+
+    <main class="section-padding">
+        <div class="container">
+            <!-- INTRO -->
+            <div class="tickets-intro reveal">
+                <h2>Ticket <span class="text-accent">Options</span></h2>
+                <p>Whether you want a focused visit or a complete journey through all the sites, we have the right option for you. All tickets include access to the general grounds.</p>
+            </div>
+
+            <div class="section-divider">
+                <svg viewBox="0 0 24 24"><path d="M12 3c-1.5 6-6 9-6 9s4.5 3 6 9c1.5-6 6-9 6-9s-4.5-3-6-9z"/></svg>
+            </div>
+
+            <!-- TICKET CARDS -->
+            <div class="tickets-grid">
+                <div class="ticket-card reveal delay-1">
+                    <h3 class="ticket-card-title">Single Site</h3>
+                    <div class="ticket-card-price">¥1,300 <span>/ person</span></div>
+                    <ul class="ticket-card-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Access to one shrine or temple</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> General grounds included</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Audio guide available</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Valid for one day</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Select</a>
+                </div>
+
+                <div class="ticket-card featured reveal delay-2">
+                    <h3 class="ticket-card-title">Combined Pass</h3>
+                    <div class="ticket-card-price">¥3,200 <span>/ person</span></div>
+                    <ul class="ticket-card-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Access to all three main sites</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> General grounds included</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Audio guide included free</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Valid for two days</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority entry</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Select</a>
+                </div>
+
+                <div class="ticket-card reveal delay-3">
+                    <h3 class="ticket-card-title">Premium Tour</h3>
+                    <div class="ticket-card-price">¥6,500 <span>/ person</span></div>
+                    <ul class="ticket-card-features">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Access to all sites</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> English-speaking guide</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Behind-the-scenes access</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Valid for two days</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Complimentary souvenir</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Select</a>
+                </div>
+            </div>
+
+            <!-- PROMOTIONS -->
+            <div class="promotions reveal">
+                <h3>🌸 Sakura Season Special</h3>
+                <p>Visit during cherry blossom season (late March to mid-April) and enjoy 15% off all Combined Pass tickets. Experience Nikko at its most breathtaking.</p>
+                <a href="#" class="btn btn-primary" style="margin-top: var(--space-md);">Learn More</a>
+            </div>
+
+            <!-- VISITING INFO -->
+            <div class="section-padding-sm">
+                <div class="tickets-intro reveal">
+                    <h2>Visitor <span class="text-accent">Information</span></h2>
+                </div>
+                <div class="explore-grid" style="max-width: 900px; margin: 0 auto;">
+                    <div class="explore-card reveal delay-1" style="cursor: default;">
+                        <div class="explore-card-body" style="text-align: center;">
+                            <h3 class="explore-card-title" style="font-size: 1.1rem;">Opening Hours</h3>
+                            <p class="explore-card-desc">April – October: 8:00 – 17:00<br>November – March: 8:00 – 16:00</p>
+                        </div>
+                    </div>
+                    <div class="explore-card reveal delay-2" style="cursor: default;">
+                        <div class="explore-card-body" style="text-align: center;">
+                            <h3 class="explore-card-title" style="font-size: 1.1rem;">Getting There</h3>
+                            <p class="explore-card-desc">2 hours from Tokyo via Tobu Railway or JR Nikko Line to Nikko Station.</p>
+                        </div>
+                    </div>
+                    <div class="explore-card reveal delay-3" style="cursor: default;">
+                        <div class="explore-card-body" style="text-align: center;">
+                            <h3 class="explore-card-title" style="font-size: 1.1rem;">Accessibility</h3>
+                            <p class="explore-card-desc">Wheelchair-accessible paths available for main viewing areas. Guides on request.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="site-logo-text">Nikkoshi Pearls</span>
+                    <p>Discover the sacred temples and shrines of Nikko, a UNESCO World Heritage site in the heart of Tochigi Prefecture, Japan.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Navigate</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="articles.html">Articles</a>
+                        <a href="tickets.html">Tickets</a>
+                        <a href="map.html">Map</a>
+                        <a href="about.html">About</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+81 288 54 0560</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>contact@nikkoshi-pearls.jp</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Nikko, Tochigi, Japan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nikkoshi Pearls. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ressources/script/main.js"></script>
+</body>
+</html>

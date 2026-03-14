@@ -1,0 +1,256 @@
+/* ============================================
+   NIKKOSHI PEARLS — Map Page Styles
+   ============================================ */
+
+/* ===================== MAP CONTAINER ===================== */
+.map-section {
+    background: var(--color-white);
+}
+
+.map-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-2xl);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    display: block;
+}
+
+/* ===================== ITINERARY SECTION ===================== */
+.itinerary-section {
+    background: var(--color-snow);
+}
+
+.itinerary-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.itinerary-header h2 {
+    margin-bottom: var(--space-xs);
+}
+
+.itinerary-header p {
+    font-size: var(--font-size-md);
+    color: var(--color-charcoal-light);
+}
+
+/* Tab Buttons */
+.itinerary-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.itinerary-tab {
+    padding: 12px 28px;
+    font-family: var(--font-display);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: 1.5px solid var(--color-charcoal-light);
+    color: var(--color-charcoal);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.itinerary-tab:hover {
+    border-color: var(--color-vermillion);
+    color: var(--color-vermillion);
+}
+
+.itinerary-tab.active {
+    background: var(--color-vermillion);
+    border-color: var(--color-vermillion);
+    color: var(--color-white);
+}
+
+/* Route Panel */
+.itinerary-panel {
+    display: none;
+}
+
+.itinerary-panel.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+.route-title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    color: var(--color-charcoal);
+    margin-bottom: var(--space-xs);
+    text-align: center;
+}
+
+.route-subtitle {
+    text-align: center;
+    font-size: var(--font-size-md);
+    color: var(--color-charcoal-light);
+    margin-bottom: var(--space-xl);
+    font-style: italic;
+}
+
+/* Route Steps */
+.route-steps {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 40px;
+}
+
+.route-steps::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-sakura-light), var(--color-vermillion), var(--color-sakura-light));
+}
+
+.route-step {
+    position: relative;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.route-step:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+}
+
+.route-step::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-vermillion);
+    border: 3px solid var(--color-sakura-light);
+}
+
+.route-step-number {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-vermillion);
+    margin-bottom: 4px;
+}
+
+.route-step h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 4px;
+}
+
+.route-step-duration {
+    font-size: var(--font-size-xs);
+    color: var(--color-gold);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-xs);
+}
+
+.route-step p {
+    font-size: var(--font-size-sm);
+    color: var(--color-charcoal-light);
+    line-height: 1.7;
+}
+
+/* Food recommendations */
+.route-food {
+    max-width: 800px;
+    margin: var(--space-lg) auto 0;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-sakura-light);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-sakura);
+}
+
+.route-food h4 {
+    font-size: var(--font-size-base);
+    color: var(--color-vermillion);
+    margin-bottom: var(--space-xs);
+}
+
+.route-food ul {
+    list-style: none;
+}
+
+.route-food li {
+    font-size: var(--font-size-sm);
+    color: var(--color-charcoal-light);
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.route-food li::before {
+    content: '🍡';
+    position: absolute;
+    left: 0;
+}
+
+/* Objective badge */
+.route-objective {
+    max-width: 800px;
+    margin: var(--space-md) auto 0;
+    text-align: center;
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(196, 70, 43, 0.06);
+    border-radius: var(--radius-md);
+    font-family: var(--font-display);
+    font-size: var(--font-size-sm);
+    color: var(--color-vermillion);
+    letter-spacing: 0.04em;
+}
+
+/* ===================== RESPONSIVE (Map) ===================== */
+@media (min-width: 768px) {
+    .map-container iframe {
+        height: 550px;
+    }
+}
+
+@media (max-width: 767px) {
+    .map-container iframe {
+        height: 300px;
+    }
+
+    .route-steps {
+        padding-left: 30px;
+    }
+
+    .route-steps::before {
+        left: 10px;
+    }
+
+    .route-step::before {
+        left: -28px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .itinerary-tab {
+        padding: 10px 20px;
+        font-size: var(--font-size-xs);
+    }
+}
