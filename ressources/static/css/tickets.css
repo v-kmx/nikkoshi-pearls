@@ -48,7 +48,7 @@
     right: 0;
     padding: 6px;
     background: var(--color-vermillion);
-    color: var(--color-white);
+    color: #FFFFFF;
     font-family: var(--font-display);
     font-size: var(--font-size-xs);
     letter-spacing: 0.1em;

@@ -234,6 +234,9 @@ function initTempleContent() {
   document.getElementById('page-title').textContent = `${temple.name} — Nikkoshi Pearls`;
   document.getElementById('temple-name').textContent = temple.name;
   document.getElementById('temple-subtitle').textContent = temple.subtitle;
+  if (temple.bannerImg) {
+    document.getElementById('temple-hero-img').src = `ressources/static/img/${temple.bannerImg}`;
+  }
 
   // Build article content
   let html = '';
@@ -246,7 +249,7 @@ function initTempleContent() {
     if (section.image) {
       html += `
         <div class="temple-article-img reveal-scale">
-          <img src="ressources/static/img/placeholder_img.jpg" alt="${section.title}">
+          <img src="ressources/static/img/${temple.bannerImg}" alt="${section.title}">
         </div>
       `;
     }
@@ -268,6 +271,23 @@ function initTempleContent() {
     html += `</div>`;
   }
 
+  // Build post-timeline sections (e.g. Architecture, Shrine Complex)
+  if (temple.postTimelineSections && temple.postTimelineSections.length > 0) {
+    temple.postTimelineSections.forEach(section => {
+      html += `<h2 class="reveal">${section.title}</h2>`;
+      section.paragraphs.forEach(p => {
+        html += `<p class="reveal">${p}</p>`;
+      });
+      if (section.image) {
+        html += `
+          <div class="temple-article-img reveal-scale">
+            <img src="ressources/static/img/${temple.bannerImg}" alt="${section.title}">
+          </div>
+        `;
+      }
+    });
+  }
+
   contentEl.innerHTML = html;
 
   // Re-init scroll reveal for dynamically added elements
@@ -279,6 +299,7 @@ const templeData = {
   toshogu: {
     name: 'Nikko Tosho-gu Shrine',
     subtitle: 'The Lavish Mausoleum of Tokugawa Ieyasu',
+    bannerImg: 'Tosho-guShrine_Banner.jpg',
     sections: [
       {
         title: 'A Monument to Power and Beauty',
@@ -312,12 +333,24 @@ const templeData = {
       { year: '1617', text: 'Original Tosho-gu shrine constructed in Nikko.' },
       { year: '1636', text: 'Grand reconstruction by Tokugawa Iemitsu, creating the shrine seen today.' },
       { year: '1999', text: 'Designated as a UNESCO World Heritage Site.' }
+    ],
+    postTimelineSections: [
+      {
+        title: 'Architecture',
+        paragraphs: [
+          'The shrine complex is a masterpiece of Edo-period architecture, blending Chinese, Korean, and Japanese design elements into a uniquely ornate style known as "Gongen-zukuri." Over 15,000 craftsmen worked on the reconstruction in 1636, using techniques that remain impressive even by modern standards.',
+          'The Yomeimon Gate alone features more than 500 individually carved sculptures covering every surface — dragons coiling around pillars, sages meditating in mountain landscapes, and mythical creatures guarding the passageways. Each carving carries symbolic meaning tied to Confucian and Buddhist philosophy.',
+          'Beyond the gate, the Karamon (Chinese Gate), the Haiden (worship hall), and the Honden (main hall) form a sequence of increasingly sacred spaces. The interiors are decorated with elaborate ceiling paintings and gold leaf that catch the filtered light of the surrounding cedar forest.'
+        ],
+        image: false
+      }
     ]
   },
 
   rinnoji: {
     name: 'Rinno-ji Temple',
     subtitle: 'Ancient Buddhist Temple of the Tendai Sect',
+    bannerImg: 'Rinno-JiTemple_Banner.jpeg',
     sections: [
       {
         title: 'The Heart of Mountain Buddhism',
@@ -356,6 +389,7 @@ const templeData = {
   futarasan: {
     name: 'Futarasan Shrine',
     subtitle: 'Guardian Shrine of the Sacred Mountains',
+    bannerImg: 'Futarasan_Banner.jpg',
     sections: [
       {
         title: 'Protector of Nikko\'s Mountains',
@@ -387,12 +421,24 @@ const templeData = {
       { year: '1619', text: 'The current main hall is constructed during the early Edo period.' },
       { year: '1636', text: 'Additional structures built as part of the Tosho-gu expansion.' },
       { year: '1999', text: 'Designated as part of the UNESCO World Heritage Site.' }
+    ],
+    postTimelineSections: [
+      {
+        title: 'The Shrine Complex',
+        paragraphs: [
+          'The main shrine (Honsha) at the foot of Mount Nantai is a serene contrast to the nearby Tosho-gu. Its architecture follows the traditional Shinto style with clean lines, unpainted wood accents, and restrained ornamentation that emphasizes harmony with the natural surroundings.',
+          'The Chugushi shrine on Lake Chuzenji\'s shores serves as a mid-mountain worship point, where pilgrims historically stopped before ascending to the Okumiya summit shrine at 2,486 meters. The lake itself, formed by ancient volcanic eruptions, is considered sacred water born from Mount Nantai.',
+          'Several smaller subsidiary shrines dot the grounds, each dedicated to specific aspects of nature worship — from the spirits of individual trees to the kami of flowing water. The "Ghost Lantern" (Bakemono Toro), said to have been attacked by samurai who mistook its flickering flame for a ghost, remains one of the shrine\'s most charming curiosities.'
+        ],
+        image: false
+      }
     ]
   },
 
   taiyuin: {
     name: 'Taiyuin Mausoleum',
     subtitle: 'The Refined Resting Place of the Third Shogun',
+    bannerImg: 'TaiyuinMausoleum_Banner.jpg',
     sections: [
       {
         title: 'Elegance in Restraint',
@@ -423,6 +469,7 @@ const templeData = {
   shinkyo: {
     name: 'Shinkyo Sacred Bridge',
     subtitle: 'The Symbolic Gateway to Sacred Nikko',
+    bannerImg: 'ShinkyoSacredBridge_Banner.jpg',
     sections: [
       {
         title: 'The Bridge of Legend',
@@ -450,7 +497,8 @@ const templeData = {
 
   kanmangafuchi: {
     name: 'Kanmangafuchi Abyss',
-    subtitle: 'The Mysterious Gorge of the Counting Statues',
+    subtitle: 'The Mystical Gorge of the Vanishing Jizo',
+    bannerImg: 'KanmangafuchiAbyss_Banner.jpg',
     sections: [
       {
         title: 'Nature\'s Sanctuary',

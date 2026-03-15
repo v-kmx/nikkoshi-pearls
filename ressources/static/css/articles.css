@@ -28,7 +28,7 @@
 .search-bar button {
     padding: 12px 24px;
     background: var(--color-vermillion);
-    color: var(--color-white);
+    color: #FFFFFF;
     border-radius: var(--radius-md);
     font-family: var(--font-display);
     font-size: var(--font-size-sm);

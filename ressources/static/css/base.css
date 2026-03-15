@@ -7,13 +7,13 @@
 
 /* ===================== CSS VARIABLES ===================== */
 :root {
-    /* Colors */
+    /* Colors — Light Theme (White-Red-Pink) */
     --color-white: #FFFFFF;
     --color-snow: #FAF7F4;
     --color-charcoal: #2C2C2C;
     --color-charcoal-light: #4A4A4A;
-    --color-vermillion: #C4462B;
-    --color-vermillion-dark: #A33822;
+    --color-vermillion: #C41E3A;
+    --color-vermillion-dark: #9B1B30;
     --color-sakura: #E8A0BF;
     --color-sakura-light: #FDE8EF;
     --color-gold: #C9A84C;
@@ -69,23 +69,24 @@
 
 /* ===================== DARK THEME ===================== */
 [data-theme="dark"] {
-    --color-white: #1A1A2E;
-    --color-snow: #16213E;
-    --color-charcoal: #E8E8E8;
-    --color-charcoal-light: #B0B0B0;
-    --color-vermillion: #D95038;
-    --color-vermillion-dark: #C4462B;
-    --color-sakura: #C47A97;
-    --color-sakura-light: #2A1A2E;
-    --color-gold: #D4B054;
-    --color-gold-light: #3D3520;
-    --color-overlay: rgba(10, 10, 30, 0.8);
-    --color-overlay-light: rgba(10, 10, 30, 0.5);
+    /* MCN Graphical Chart Colors */
+    --color-white: #333333;
+    --color-snow: #505050;
+    --color-charcoal: #FFFFFF;
+    --color-charcoal-light: #E0E0E0;
+    --color-vermillion: #ea5c0d;
+    --color-vermillion-dark: #b94503;
+    --color-sakura: #f7af3e;
+    --color-sakura-light: #3D3520;
+    --color-gold: #f7af3e;
+    --color-gold-light: #4A3D20;
+    --color-overlay: rgba(30, 30, 30, 0.85);
+    --color-overlay-light: rgba(30, 30, 30, 0.5);
 
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.35);
-    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.45);
-    --shadow-card: 0 2px 16px rgba(217, 80, 56, 0.12);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 2px 16px rgba(234, 92, 13, 0.15);
 }
 
 /* Smooth theme transition */
@@ -372,8 +373,8 @@ p {
 }
 
 [data-theme="dark"] .site-header {
-    background: rgba(26, 26, 46, 0.95);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(51, 51, 51, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .site-header.compact {
@@ -502,6 +503,20 @@ p {
     display: none;
 }
 
+/* Fix sun icon visibility in dark mode — ensure rays are visible */
+[data-theme="dark"] .theme-toggle .icon-sun {
+    fill: var(--color-charcoal);
+    stroke: var(--color-charcoal);
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun circle {
+    fill: var(--color-charcoal);
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun line {
+    stroke: var(--color-charcoal);
+}
+
 /* Header nav links (desktop) */
 .header-nav {
     display: none;
@@ -549,7 +564,7 @@ p {
 }
 
 [data-theme="dark"] .overlay-menu {
-    background: rgba(26, 26, 46, 0.7);
+    background: rgba(51, 51, 51, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
 }
@@ -698,7 +713,7 @@ p {
 }
 
 [data-theme="dark"] .site-footer {
-    background: #0F0F23;
+    background: #2A2A2A;
 }
 
 [data-theme="dark"] .footer-brand .site-logo-text,
@@ -725,7 +740,7 @@ p {
 }
 
 .footer-brand .site-logo-text {
-    color: var(--color-white);
+    color: #FFFFFF;
     font-size: var(--font-size-lg);
     margin-bottom: var(--space-sm);
     display: block;
@@ -740,7 +755,7 @@ p {
 .footer-heading {
     font-family: var(--font-display);
     font-size: var(--font-size-sm);
-    color: var(--color-white);
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     margin-bottom: var(--space-md);
@@ -792,35 +807,38 @@ p {
     color: rgba(255, 255, 255, 0.4);
 }
 
-.footer-socials {
-    display: flex;
-    gap: var(--space-sm);
-}
-
-.footer-socials a {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+/* ===================== FOOTER PARTNERS ===================== */
+.footer-partners {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--transition-fast);
+    gap: 2rem;
+    padding-top: var(--space-md);
+    margin-top: var(--space-sm);
 }
 
-.footer-socials a:hover {
-    background: var(--color-vermillion);
-    border-color: var(--color-vermillion);
+.footer-partners a,
+.footer-partners span {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.75;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
-.footer-socials a svg {
-    width: 16px;
-    height: 16px;
-    fill: rgba(255, 255, 255, 0.7);
+.footer-partners a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    color: inherit;
 }
 
-.footer-socials a:hover svg {
-    fill: var(--color-white);
+.footer-partners img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] .footer-partners img {
+    filter: brightness(0) invert(1);
 }
 
 /* ===================== BUTTONS ===================== */
@@ -841,12 +859,12 @@ p {
 
 .btn-primary {
     background: var(--color-vermillion);
-    color: var(--color-white);
+    color: #FFFFFF;
 }
 
 .btn-primary:hover {
     background: var(--color-vermillion-dark);
-    color: var(--color-white);
+    color: #FFFFFF;
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(196, 70, 43, 0.3);
 }
@@ -859,7 +877,7 @@ p {
 
 .btn-outline:hover {
     background: var(--color-vermillion);
-    color: var(--color-white);
+    color: #FFFFFF;
     transform: translateY(-2px);
 }
 
@@ -902,7 +920,7 @@ p {
 }
 
 .page-hero-content h1 {
-    color: var(--color-white);
+    color: #FFFFFF;
     font-size: var(--font-size-3xl);
     margin-bottom: var(--space-xs);
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);

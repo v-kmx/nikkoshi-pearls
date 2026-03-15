@@ -71,7 +71,7 @@
 .itinerary-tab.active {
     background: var(--color-vermillion);
     border-color: var(--color-vermillion);
-    color: var(--color-white);
+    color: #FFFFFF;
 }
 
 /* Route Panel */
@@ -204,7 +204,7 @@
 }
 
 .route-food li::before {
-    content: '🍡';
+    content: '✧';
     position: absolute;
     left: 0;
 }
