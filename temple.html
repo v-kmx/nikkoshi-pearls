@@ -47,10 +47,6 @@
             <a href="tickets.html">Tickets</a>
             <a href="map.html">Map</a>
             <a href="about.html">About</a>
-            <div class="overlay-divider"></div>
-            <a href="temple.html?id=toshogu">Nikko Tosho-gu</a>
-            <a href="temple.html?id=rinnoji">Rinno-ji Temple</a>
-            <a href="temple.html?id=futarasan">Futarasan Shrine</a>
         </nav>
         <div class="overlay-divider"></div>
         <div class="overlay-map-preview">
@@ -59,10 +55,10 @@
     </div>
     <!-- PAGE HERO (Dynamic) -->
     <section class="page-hero" id="temple-hero">
-        <img src="ressources/static/img/placeholder_img.jpg" alt="" id="temple-hero-img">
+        <img src="ressources/static/img/articles_page_banner.jpg" alt="" id="temple-hero-img">
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
-            <h1 id="temple-name">Temple Name</h1>
+            <h1 id="temple-name">Loading...</h1>
             <p id="temple-subtitle">Loading...</p>
         </div>
     </section>
@@ -75,7 +71,7 @@
             </a>
 
             <article class="temple-article" id="temple-content">
-                <!-- Content populated by JS -->
+                <p class="temple-state">Loading article...</p>
             </article>
         </div>
     </main>
@@ -122,5 +118,7 @@
     </footer>
 
     <script src="ressources/script/main.js"></script>
+    <script src="ressources/script/api.js"></script>
+    <script src="ressources/script/temple.js"></script>
 </body>
 </html>

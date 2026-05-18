@@ -47,10 +47,6 @@
             <a href="tickets.html">Tickets</a>
             <a href="map.html">Map</a>
             <a href="about.html">About</a>
-            <div class="overlay-divider"></div>
-            <a href="temple.html?id=toshogu">Nikko Tosho-gu</a>
-            <a href="temple.html?id=rinnoji">Rinno-ji Temple</a>
-            <a href="temple.html?id=futarasan">Futarasan Shrine</a>
         </nav>
         <div class="overlay-divider"></div>
         <div class="overlay-map-preview">
@@ -78,84 +74,7 @@
 
             <!-- ARTICLES GRID -->
             <div class="articles-list-grid" id="articles-list">
-                <a href="temple.html?id=toshogu" class="article-list-card reveal delay-1">
-                    <div class="article-list-card-img">
-                        <img src="ressources/static/img/Tosho-guShrine_Banner.jpg" alt="Nikko Tosho-gu Shrine">
-                    </div>
-                    <div class="article-list-card-body">
-                        <div class="article-list-card-meta">
-                            <span class="tag">Shrine</span>
-                            <span>Est. 1617</span>
-                        </div>
-                        <h3>Nikko Tosho-gu Shrine</h3>
-                        <p>The lavishly decorated mausoleum of Tokugawa Ieyasu, the founder of the Tokugawa shogunate that ruled Japan for over 250 years.</p>
-                    </div>
-                </a>
-                <a href="temple.html?id=rinnoji" class="article-list-card reveal delay-2">
-                    <div class="article-list-card-img">
-                        <img src="ressources/static/img/Rinno-JiTemple_Banner.jpeg" alt="Rinno-ji Temple">
-                    </div>
-                    <div class="article-list-card-body">
-                        <div class="article-list-card-meta">
-                            <span class="tag">Temple</span>
-                            <span>Est. 766</span>
-                        </div>
-                        <h3>Rinno-ji Temple</h3>
-                        <p>The most important temple in Nikko, founded by the monk Shodo Shonin, housing three gilded Buddha statues representing the deities of Nikko's sacred mountains.</p>
-                    </div>
-                </a>
-                <a href="temple.html?id=futarasan" class="article-list-card reveal delay-3">
-                    <div class="article-list-card-img">
-                        <img src="ressources/static/img/Futarasan_Banner.jpg" alt="Futarasan Shrine">
-                    </div>
-                    <div class="article-list-card-body">
-                        <div class="article-list-card-meta">
-                            <span class="tag">Shrine</span>
-                            <span>Est. 782</span>
-                        </div>
-                        <h3>Futarasan Shrine</h3>
-                        <p>Originally founded by Shodo Shonin, this shrine is dedicated to the deities of Nikko's three most sacred mountains and is the oldest shrine in the area.</p>
-                    </div>
-                </a>
-                <a href="temple.html?id=taiyuin" class="article-list-card reveal delay-4">
-                    <div class="article-list-card-img">
-                        <img src="ressources/static/img/TaiyuinMausoleum_Banner.jpg" alt="Taiyuin Mausoleum">
-                    </div>
-                    <div class="article-list-card-body">
-                        <div class="article-list-card-meta">
-                            <span class="tag">Mausoleum</span>
-                            <span>Est. 1653</span>
-                        </div>
-                        <h3>Taiyuin Mausoleum</h3>
-                        <p>The mausoleum of Tokugawa Iemitsu, the third Tokugawa shogun. Intentionally less ornate than Tosho-gu out of respect for his grandfather Ieyasu.</p>
-                    </div>
-                </a>
-                <a href="temple.html?id=shinkyo" class="article-list-card reveal delay-1">
-                    <div class="article-list-card-img">
-                        <img src="ressources/static/img/ShinkyoSacredBridge_Banner.jpg" alt="Shinkyo Sacred Bridge">
-                    </div>
-                    <div class="article-list-card-body">
-                        <div class="article-list-card-meta">
-                            <span class="tag">Landmark</span>
-                            <span>Est. 1636</span>
-                        </div>
-                        <h3>Shinkyo Sacred Bridge</h3>
-                        <p>The iconic vermillion bridge spanning the Daiya River, considered one of Japan's three finest bridges and the symbolic gateway to the sacred area.</p>
-                    </div>
-                </a>
-                <a href="temple.html?id=kanmangafuchi" class="article-list-card reveal delay-2">
-                    <div class="article-list-card-img">
-                        <img src="ressources/static/img/KanmangafuchiAbyss_Banner.jpg" alt="Kanmangafuchi Abyss">
-                    </div>
-                    <div class="article-list-card-body">
-                        <div class="article-list-card-meta">
-                            <span class="tag">Nature</span>
-                            <span>Historical</span>
-                        </div>
-                        <h3>Kanmangafuchi Abyss</h3>
-                        <p>A serene gorge lined with the mysterious Narabi Jizo — rows of stone statues said to change in number with each visit, a hauntingly beautiful walking path.</p>
-                    </div>
-                </a>
+                <p class="articles-state">Loading articles...</p>
             </div>
         </div>
     </main>
@@ -202,5 +121,7 @@
     </footer>
 
     <script src="ressources/script/main.js"></script>
+    <script src="ressources/script/api.js"></script>
+    <script src="ressources/script/articles.js"></script>
 </body>
 </html>
